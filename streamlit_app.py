@@ -10,15 +10,10 @@ import streamlit as st
 Upload Video Here!
 """
 
-<html>
-<body>
-   <form enctype = "multipart/form-data" action = "python_script.py" method = "post">
-    
-<p>Upload File: <input type = "file" name = "filename" /></p>
- 
-    
-<p><input type = "submit" value = "Upload" /></p>
- 
-</form>
-</body>
-</html>
+import os
+fi = form['filename']
+if fi.filename:
+	# This code will strip the leading absolute path from your file-name
+	fil = os.path.basename(fi.filename)
+	# open for reading & writing the file into the server
+	open(fn, 'wb').write(fi.file.read())
